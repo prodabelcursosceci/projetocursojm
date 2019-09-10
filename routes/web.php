@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/about', function () {
+    return "essa aplicacao é a primeira do curso de lavarel da turma do curso de laravel de 09/09/2019 ";
+});
+
+Route::get('/phpinfo', function () {
+    phpinfo();
+});
+
+Route::get('/helloworld', "TesteController@index");
+
+
+Route::get('/helloworld/{nome}/{idade?}', "TesteController@index2");

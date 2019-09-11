@@ -27,3 +27,15 @@ Route::get('/helloworld', "TesteController@index");
 
 
 Route::get('/helloworld/{nome}/{idade?}', "TesteController@index2");
+
+
+Route::view('/welcome', 'welcome');
+
+Route::redirect('/welcome2','welcome');
+
+Route::get('/index1', "TesteController@index1");
+
+
+Route::post('/index1', "TesteController@indexPost");
+
+Route::get('/index2/{nome}/{idade?}', "TesteController@index2");

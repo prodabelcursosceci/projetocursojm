@@ -48,6 +48,14 @@ class TesteController extends Controller
         
     }
 
+    public function __construct()
+    {
+        $this->middleware('checkage');
+
+        $this->middleware('throttle:1,1');
+    }
+
+
     public function index2($nome, $idade=null)
     {
         echo "hello world". $nome. " idade " .$idade;

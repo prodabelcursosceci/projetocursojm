@@ -33,9 +33,22 @@ Route::view('/welcome', 'welcome');
 
 Route::redirect('/welcome2','welcome');
 
-Route::get('/index1', "TesteController@index1");
-
+Route::middleware('checkage')->group(function(){ 
+   
+   Route::prefix( 'teste')->group(function() {
+    Route::get('index1', "TesteController@index1");
+    Route::post('index1', "TesteController@index1");
+    Route::get('index2', "TesteController@index2");
+   }
+);
+});
 
 Route::post('/index1', "TesteController@indexPost");
 
 Route::get('/index2/{nome}/{idade?}', "TesteController@index2");
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

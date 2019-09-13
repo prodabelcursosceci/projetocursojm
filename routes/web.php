@@ -52,3 +52,6 @@ Route::get('/index2/{nome}/{idade?}', "TesteController@index2");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::resource('cidades', 'CidadeController'); 
